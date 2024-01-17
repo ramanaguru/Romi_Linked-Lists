@@ -1,0 +1,51 @@
+Question - 4 : Delete Head of a Given Linked List
+
+
+//Link ====>  https://www.codingninjas.com/studio/problems/delete-head-of-a-given-linked-list_9941216
+
+
+//CODE
+//TC : O(N) ; Sc: O(1)
+Line  - 42 code starts
+
+/****************************************************************
+
+ Following is the linkedList class structure:
+
+ class Node
+ {
+     public int data;
+     public Node next;
+
+     Node()
+     {
+         this.data = 0;
+         this.next = null;
+     }
+
+     Node(int data)
+     {
+         this.data = data;
+         this.next = null;
+     }
+
+     Node(int data, Node next)
+     {
+         this.data = data;
+         this.next = next;
+     }
+ }
+
+ *****************************************************************/
+
+
+public class Solution {
+    public static Node deleteHead(Node head) {
+        if(head == null){
+            return null;
+        }
+
+        head= head.next;
+        return head;
+    }
+}
