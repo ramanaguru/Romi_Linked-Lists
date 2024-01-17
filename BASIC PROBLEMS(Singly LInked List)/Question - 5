@@ -1,0 +1,38 @@
+Question - 5  : Delete NodeTAil Of Linked List
+
+
+//Link ===>  https://www.codingninjas.com/studio/problems/delete-node-of-linked-list_8160463
+
+
+//Code
+
+
+Tc: O(N)   ;   Sc : O(1)
+
+
+import java.util.*;
+/****************************************************************
+
+
+NODE implementation
+
+ *****************************************************************/
+
+public class Solution {
+    public static Node deleteLast(Node list){
+
+        if(list == null || list.next == null) return null;
+
+        Node temp = list;
+
+        while(temp.next.next != null){
+
+            temp = temp.next;
+        }
+
+        temp.next = null;
+
+
+        return list;
+    }
+}
