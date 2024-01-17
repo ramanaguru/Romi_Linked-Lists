@@ -1,0 +1,52 @@
+Question - 2 :  Find Length of the LL
+
+Link =====>  https://www.codingninjas.com/studio/problems/count-nodes-of-linked-list_5884
+
+//Code
+Tc: O(N)  ; Sc: O(1)
+Line - 38 code starts
+
+/****************************************************************
+
+ Following is the class structure of the Node class:
+
+ class Node {
+     public int data;
+     public Node next;
+
+     Node()
+     {
+         this.data = 0;
+         this.next = null;
+     }
+
+     Node(int data)
+     {
+         this.data = data;
+         this.next = null;
+     }
+
+     Node(int data, Node next)
+     {
+         this.data = data;
+         this.next = next;
+     }
+ }
+
+ *****************************************************************/
+
+public class Solution {
+    public static int length(Node head){
+        //best practice is never touch the head Node always take some reference
+        int length = 0;
+        Node temp = head;
+
+        while(temp != null){
+            length++;
+            temp = temp.next;
+        }
+
+
+        return length;
+    }
+}
