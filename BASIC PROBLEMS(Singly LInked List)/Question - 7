@@ -1,0 +1,61 @@
+Question -  7 : Insert Node At The Beginning
+
+
+//LINK =======>  https://www.codingninjas.com/studio/problems/insert-node-at-the-beginning_8144739
+
+
+
+//CODE
+TC: O(1)  ;    SC : O(1)
+Line 45 Code starts
+
+/****************************************************************
+
+ Following is the class structure of the Node class:
+
+ class Node {
+     public int data;
+     public Node next;
+     public Node prev;
+
+     Node()
+     {
+         this.data = 0;
+         this.next = null;
+         this.prev = null;
+     }
+
+     Node(int data)
+     {
+         this.data = data;
+         this.next = null;
+         this.prev = null;
+     }
+
+     Node(int data, Node next)
+     {
+         this.data = data;
+         this.next = next;
+         this.prev = next;
+     }
+ };
+
+ *****************************************************************/
+
+public class Solution
+{
+    public static Node insertAtFirst(Node head, int val) {
+
+        Node temp = new Node(val);
+
+        if(head == null){
+            head = temp;
+        }
+        else{
+            temp.next = head;
+            head= temp;
+        }
+
+        return head;
+    }
+}
