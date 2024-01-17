@@ -1,0 +1,22 @@
+/* Node Class Defining ---> For basic basic understanding I am doing this
+
+
+class Node{
+
+    int data;
+    Node next;
+
+    Node(Node data, Node next){
+           this.data = data;
+           this.next = next;
+    }
+
+    Node(Node data){
+        this.data = data;
+        this.next = null;
+    }
+    
+}
+
+
+*/
