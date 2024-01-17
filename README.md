@@ -64,4 +64,8 @@ NODE                 NODE                 NODE
 This is all you should know, In case you didnt understand this it is completly Okay , ignore this and focus on the basic problems first
 then slowly things will catch up.....
 
+
+
+![image](https://github.com/ramanaguru/Linked-Lists/assets/121872409/7194c111-603e-4ac7-8477-f66723b694e2)
+
 */
