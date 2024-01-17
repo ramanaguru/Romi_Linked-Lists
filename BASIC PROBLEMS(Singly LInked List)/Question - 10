@@ -1,0 +1,72 @@
+Question - 10 : Insert before the node with Value X of the Linked List
+
+Link =====> https://www.codingninjas.com/studio/problems/insert-node-before-value_9886941
+
+
+TC: O(N) ;  Sc : O(1)
+
+/****************************************************************
+
+ Following is the linkedList class structure:
+
+ class Node
+ {
+     public int data;
+     public Node next;
+
+     Node()
+     {
+         this.data = 0;
+         this.next = null;
+     }
+
+     Node(int data)
+     {
+         this.data = data;
+         this.next = null;
+     }
+
+     Node(int data, Node next)
+     {
+         this.data = data;
+         this.next = next;
+     }
+ }
+
+ *****************************************************************/
+
+
+public class Solution {
+    public static Node insertBeforeValue(Node head, int x, int val) {
+        if(head == null) {
+            return new Node(x);
+        }
+
+        if(head.data == val){
+            Node newNode = new Node(x);
+            newNode.next = head;
+            head = newNode;
+            return head;
+        }
+
+
+        //traverse to find the node with value val
+        Node temp = head;
+
+        while(temp.next != null && temp.next.data != val){
+            temp = temp.next;
+        }
+
+        if(temp.next == null){
+            return head;
+        }
+
+        Node newNode = new Node(x);
+        newNode.next = temp.next;
+        temp.next = newNode;
+
+        return head;
+
+
+    }
+}
