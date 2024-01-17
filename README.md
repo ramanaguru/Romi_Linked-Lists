@@ -1,10 +1,13 @@
 # Linked-Lists
+
 This repository consists of Linked Lists Problems
 
+To Practise each problem , I have given link in each problem just copy and paste in browser you will be able to see and solve happily
+
+In case you are trying this set of problems, YOU CAN ABLE TO SOLVE ALL PROBLEMS IN LINKED LISTS
 
 
-
-
+HAPPY LEARNING AND   HAPPY CODING
 
 
 /*
