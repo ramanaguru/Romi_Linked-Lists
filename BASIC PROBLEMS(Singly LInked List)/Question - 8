@@ -1,0 +1,62 @@
+Question -  8 : Insert Node at end of Linked List
+
+//LINK =======>   https://www.codingninjas.com/studio/problems/insert-at-end_9886933
+
+
+
+//CODE
+TC: O(N)  ;    SC : O(1)
+
+
+/****************************************************************
+
+ Following is the linkedList class structure:
+
+ class Node
+ {
+     public int data;
+     public Node next;
+
+     Node()
+     {
+         this.data = 0;
+         this.next = null;
+     }
+
+     Node(int data)
+     {
+         this.data = data;
+         this.next = null;
+     }
+
+     Node(int data, Node next)
+     {
+         this.data = data;
+         this.next = next;
+     }
+ }
+
+ *****************************************************************/
+
+public class Solution {
+    public static Node insertEnd(Node head, int k) {
+
+        if(head == null){
+            return new Node(k);
+        }
+
+        Node temp = head;
+
+        while(temp.next != null){
+            temp = temp.next;
+        }
+
+        Node newNode = new Node(k);
+        temp.next = newNode;
+
+        newNode.next = null;
+
+        return head;
+
+    }
+}
