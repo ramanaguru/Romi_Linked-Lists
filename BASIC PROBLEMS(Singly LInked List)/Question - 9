@@ -1,0 +1,66 @@
+Question -  9 :  Insert before the Kth element of the LL
+
+
+//LINK =======>   https://www.codingninjas.com/studio/problems/insertion-in-a-singly-linked-list_4609646
+
+
+
+//CODE
+TC: O(N)  ;    SC : O(1)
+
+
+/************************************************************
+
+ Following is the linkedList class structure:
+
+ class Node<T> {
+ T data;
+ Node<T> next;
+
+ public Node(T data) {
+ this.data = data;
+ }
+ }
+
+ ************************************************************/
+
+public class Solution {
+
+    static Node insert(Node head, int n, int pos, int val) {
+
+        Node newNode =new Node(val);
+
+        //Starting pos insert
+        if(pos == 0){
+            newNode.next = head;
+            head = newNode;
+            return head;
+        }
+
+        // After the loop temp will be pointing to the end of the list.
+        Node temp = head;
+        while(temp.next != null){
+            temp = temp.next;
+        }
+
+        // We have to add node at the end of the list.
+        if(pos == n){
+            temp.next = newNode;
+            return head;
+        }
+
+        //Middle
+        temp = head;
+        for(int i =0 ; i < pos- 1; i++){
+            temp = temp.next;
+        }
+
+        newNode.next = temp.next;
+        temp.next = newNode;
+        return head;
+
+
+
+
+    }
+}
