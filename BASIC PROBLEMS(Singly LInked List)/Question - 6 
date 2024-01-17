@@ -1,0 +1,44 @@
+Question -  6 :   Delete a Node from Linked List
+
+//LINK =======>    https://www.codingninjas.com/studio/problems/delete-node-in-ll_5881
+
+
+
+//CODE
+TC: O(N)  ;    SC : O(1)
+
+
+import java.util.*;
+/****************************************************************
+
+ Following is the class structure of the Node class:
+
+    NODE class Implementation......
+ *****************************************************************/
+
+public class Solution {
+	public static Node<Integer> deleteNode( Node<Integer> head, int pos) {
+		if(head == null){
+			return null;
+		}
+		if(pos == 0){
+			return head.next;
+		}
+		int count = 0;
+
+		Node<Integer>temp =head;
+
+		while(count < pos -1 && temp != null){
+			temp = temp.next;
+			count++;
+		}
+
+		if(temp == null || temp.next == null){
+			return head;
+		}
+
+		temp.next = temp.next.next;
+
+		return head;
+	}
+}
