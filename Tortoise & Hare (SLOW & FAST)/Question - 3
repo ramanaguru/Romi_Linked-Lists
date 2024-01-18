@@ -1,0 +1,51 @@
+Question - 3 :  Remove Loop from Linked List Cycle
+
+Input :  1 -> 2
+         ^    |
+         | - -
+
+
+Output : 1 -> 2 - > null
+
+
+
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     public int val;
+ *     public ListNode next;
+ *     ListNode(int x) { val = x; next = null; }
+ * }
+ */
+public class Solution {
+    public ListNode solve(ListNode A) {
+        ListNode slow = A;
+        ListNode fast = A;
+
+
+        slow = slow.next;
+        fast = fast.next.next;
+
+        while(slow != fast){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        ListNode s1 = A;
+        ListNode s2 =slow;
+
+        while(s1 != s2){
+            s1 = s1.next;
+            s2 = s2.next;
+        }
+        ListNode temp = s1;
+
+        while(temp.next != s1){
+            temp = temp.next;
+        }
+
+        temp.next = null;
+
+        return A;
+    }
+}
