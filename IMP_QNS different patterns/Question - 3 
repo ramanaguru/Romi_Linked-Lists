@@ -1,0 +1,47 @@
+Question - 3  : SWAP NODES IN PAIRS
+
+LINK  ==>    https://leetcode.com/problems/swap-nodes-in-pairs/
+
+Problem explaination :
+
+Given a linked list A, swap every two adjacent nodes and return its head.
+NOTE: Your algorithm should use only constant space. You may not modify the values in the list; only nodes themselves can be changed
+
+//CODE
+
+class Solution {
+    public ListNode swapPairs(ListNode head) {
+
+        // declare two nodes and assign at 1st and 2nd position (prev and curr)
+        // swap values of these 2 nodes
+        // update prev = curr.next
+        // update curr = prev.next {i.e by 2 positions.} DRY RUN IT WILL MAKE SENSE
+        // check curr.next for null pointer expection and exist
+
+        if(head == null){
+            return null;
+        }
+        if(head.next == null){
+            return head;
+        }
+
+        ListNode prev = head;
+        ListNode curr = head.next;
+
+        while(curr != null){
+            int temp = prev.val;
+            prev.val = curr.val;
+            curr.val = temp;
+
+            if(curr.next == null){
+                return head;
+            }
+
+            prev = curr.next;
+            curr = prev.next;
+        }
+
+        return head;
+
+    }
+}
